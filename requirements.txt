@@ -1,4 +1,6 @@
 Flask
-gunicorn
 pandas
+matplotlib
+plotly
+gunicorn
 # other packages...
