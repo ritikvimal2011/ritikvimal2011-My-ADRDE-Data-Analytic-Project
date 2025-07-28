@@ -5,6 +5,9 @@ import os
 import uuid
 import plotly.graph_objs as go
 import plotly.offline as pyo
+from flask import Flask
+app = Flask(__name__)
+
 
 app = Flask(__name__)
 
