@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IntelligentReach - Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      Meet Adrde(DRDO).com – Click For Officeal Webpage<a href="https://www.drdo.gov.in/drdo/labs-and-establishments/aerial-delivery-research-and-development-establishment-adrde">Click here</a>
+    </div>
+    <div class="navbar">
+      <div class="logo">Virtualizationof<span>Data</span></div>  
+      <div class="hamburger" id="hamburger">&#9776;</div>     
+      <ul class=" nav-list" id="menuBar">
+          <li class="dropdown">
+        <li><a href="{{ url_for('platform_info') }}">Platform  info</a></li>
+      
+      <ul class="dropdown-menu">
+    <li><a href="/railway-data">Railway Data</a></li>
+    <li><a href="/energy-data">Energy Data</a></li>
+    <li><a href="/health-data">Health Data</a></li>
+    <li><a href="/wind-data">Wind Speed</a></li>
+  </ul>
+</li>
+        <li>Success Stories</li>
+        <li>Resources</li>
+        <li><a href="https://github.com/ritikvimal2011/">About me</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button class="demo-btn"><a href="https://www.linkedin.com/in/ritik-vimal-6068a125a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">RITIK VIMAL👤</a></button>   
+        
+      </div>
+    </div>
+  </header>
+
+  <section class="section1">
+    <main class="main-section">
+      <div class="left">
+        <h1>One Platform</h1>
+        <section class="experiments">
+          <h2>Experiments Module</h2>
+          <p>True content testing made easy. Use the Experiments Module to set up A/B tests, preview the effects...</p>
+        </section>
+      </div>
+      <div class="right">
+        <img src="data_anlysis.webp" id="hoverImage" alt="Demo Section" />
+        <div id="hoverResponse">Hey! Project of ADRDE Data Analytic 🎯</div>
+
+        <div class="demo-box" id="demoBox">
+          <h3>Do You Want to Pridection Speed of Wind </h3>
+          <p>This ML Modle Pridect Wind Speed Upto 0-22 km Altitude</p>
+          <a href="https://wind-speed-predictor-vktvgzhb6f2wwiwmgcdnu3.streamlit.app/" class="demo-link">Pridect Wind Speed</a>
+        </div>
+      </div>
+    </main>
+  </section>
+     <section class="cbse-services">
+  <h2>Deffrent Data Feild Anlaysis </h2>
+  <div class="service-cards">
+    <div class="card">
+      <h3>Railway Data</h3>
+      <p>CBSE and its regional offices can store, access, and update academic records of students in a central repository.</p>
+    </div>
+    <div class="card">
+      <h3>Electricsity Cansuption Data</h3>
+      <p>Schools can download duplicate certificates and request corrections of students' demographic information.</p>
+    </div>
+    <div class="card">
+      <h3>Pashent Data</h3>
+      <p>Employers and institutions can verify academic records online after registration.</p>
+    </div>
+    <div class="card">
+      <h3>Wind Data</h3>
+      <p>Students can access digital marksheets, pass certificates, and migration certificates through DigiLocker.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="9YishUOIsUPFgODZbUIwc";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+<!--image respones javascripet code-->
+  <script>
+    const image = document.getElementById('hoverImage');
+    const response = document.getElementById('hoverResponse');
+
+    image.addEventListener('mouseenter', () => {
+      response.style.display = 'block';
+      response.style.left = image.offsetLeft + 'px';
+      response.style.top = (image.offsetTop + image.offsetHeight + 10) + 'px';
+    });
+
+    image.addEventListener('mouseleave', () => {
+      response.style.display = 'none';
+    });
+  </script>
+
+  <!--maneu bar list...-->
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const menuBar = document.getElementById('menuBar');
+
+  hamburger.addEventListener('click', () => {
+    menuBar.classList.toggle('open');
+  });
+});
+
+
+    // Reveal demo box on scroll
+    window.addEventListener('scroll', () => {
+      const demoBox = document.getElementById('demoBox');
+      const boxTop = demoBox.getBoundingClientRect().top;
+      if (boxTop < window.innerHeight - 100) {
+        demoBox.classList.add('show');
+      }
+    });
+  </script>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
