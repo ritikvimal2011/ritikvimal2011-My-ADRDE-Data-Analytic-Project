@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: #f4f8fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 32px 28px;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px #0001;
+            text-align: center;
+        }
+        h2 {
+            color: #27496d;
+            margin-bottom: 24px;
+        }
+        img {
+            max-width: 100%;
+            border: 2px solid #d1d9e6;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 8px;
+            padding: 10px 22px;
+            background: #27496d;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #142850;
+        }
+        #loadingMsg {
+            display: none;
+            color: #e67e22;
+            margin-top: 18px;
+        }
+        .form-group { margin-bottom: 18px; text-align: left; }
+        label { display: block; margin-bottom: 6px; font-weight: 500; }
+        select, input[type="file"] { padding: 6px; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload a CSV File to Visualize</h2>
+        <form method="post" enctype="multipart/form-data" id="uploadForm">
+            <div class="form-group">
+                <label for="datafile">Choose CSV File</label>
+                <input type="file" name="datafile" accept=".csv" required>
+            </div>
+            <div class="form-group">
+                <label for="chart_type">Select Chart Type</label>
+                <select name="chart_type" id="chart_type" required>
+                    <option value="scatter">Scatter Plot</option>
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="hist">Histogram</option>
+                    <option value="box">Boxplot</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Visualize</button>
+        </form>
+        <div id="loadingMsg">Processing your file, please wait...</div>
+        <div>
+            <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+        </div>
+    </div>
+    <script>
+        // Show loading message on form submit
+        document.getElementById('uploadForm').addEventListener('submit', function() {
+            document.getElementById('loadingMsg').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IntelligentReach - Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      Meet Adrde(DRDO).com – Click For Officeal Webpage<a href="https://www.drdo.gov.in/drdo/labs-and-establishments/aerial-delivery-research-and-development-establishment-adrde">Click here</a>
+    </div>
+    <div class="navbar">
+      <div class="logo">Virtualizationof<span>Data</span></div>  
+      <div class="hamburger" id="hamburger">&#9776;</div>     
+      <ul class=" nav-list" id="menuBar">
+        <li><a href="{{ url_for('platform_info') }}">Platform  info</a></li>
+        <li class="dropdown">
+  <a href="#">Analysis The Data</a>
+      <ul class="dropdown-menu">
+    <li><a href="/railway-data">Railway Data</a></li>
+    <li><a href="/energy-data">Energy Data</a></li>
+    <li><a href="/health-data">Health Data</a></li>
+    <li><a href="/wind-data">Wind Speed</a></li>
+  </ul>
+</li>
+        <li>Success Stories</li>
+        <li>Resources</li>
+        <li><a href="https://github.com/ritikvimal2011/">About me</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button class="demo-btn"><a href="https://www.linkedin.com/in/ritik-vimal-6068a125a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">RITIK VIMAL👤</a></button>   
+        
+      </div>
+    </div>
+  </header>
+
+  <section class="section1">
+    <main class="main-section">
+      <div class="left">
+        <h1>One Platform</h1>
+        <section class="experiments">
+          <h2>Experiments Module</h2>
+          <p>True content testing made easy. Use the Experiments Module to set up A/B tests, preview the effects...</p>
+        </section>
+      </div>
+      <div class="right">
+          <img src="{{ url_for('static', filename='data_anlysis.webp') }}" alt="data_anlysis.webp" width="300">
+        <div id="hoverResponse">Hey! Project of ADRDE Data Analytic 🎯</div>
+
+        <div class="demo-box" id="demoBox">
+          <h3>Do You Want To Analyze Your File Data</h3>
+          <p>Choose and upload a CSV file</p>
+         <a href="{{ url_for('upload') }}" class="btn">Visualize Your Data</a>
+        </div>
+      </div>        
+    </main>
+  </section>
+     <section class="cbse-services">
+  <h2>Deffrent Data Feild Anlaysis </h2>
+  <div class="service-cards">
+    <div class="card">
+      <h3>Railway Data</h3>
+      <p> Analyze Indian railway station data, including maximum distances between stations and train frequency. Visualize trends and patterns to gain insights into the railway network.</p>
+    </div>
+    <div class="card">
+      <h3>Electricsity Cansuption Data</h3>
+      <p>Explore state-wise electricity generation and capacity from various sources such as coal, hydro, nuclear, and renewables. Visualize the energy mix and identify dominant sources.</p>
+    </div>
+    <div class="card">
+      <h3>Pashent Data</h3>
+      <p> Examine health datasets such as COVID-19 statistics, including new and cumulative cases by country. Visualize trends to support public health analysis and decision-making.</p>
+    </div>
+    <div class="card">
+      <h3>Wind Data</h3>
+      <p> Visualize wind speed distributions and patterns using meteorological data. Useful for renewable energy studies and environmental research.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="9YishUOIsUPFgODZbUIwc";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+<!--image respones javascripet code-->
+  <script>
+    const image = document.getElementById('hoverImage');
+    const response = document.getElementById('hoverResponse');
+
+    image.addEventListener('mouseenter', () => {
+      response.style.display = 'block';
+      response.style.left = image.offsetLeft + 'px';
+      response.style.top = (image.offsetTop + image.offsetHeight + 10) + 'px';
+    });
+
+    image.addEventListener('mouseleave', () => {
+      response.style.display = 'none';
+    });
+  </script>
+
+  <!--maneu bar list...-->
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const menuBar = document.getElementById('menuBar');
+
+  hamburger.addEventListener('click', () => {
+    menuBar.classList.toggle('open');
+  });
+});
+
+
+    // Reveal demo box on scroll
+    window.addEventListener('scroll', () => {
+      const demoBox = document.getElementById('demoBox');
+      const boxTop = demoBox.getBoundingClientRect().top;
+      if (boxTop < window.innerHeight - 100) {
+        demoBox.classList.add('show');
+      }
+    });
+  </script>
+ 
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

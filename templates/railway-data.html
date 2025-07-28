@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Railway Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Railway Data Analysis</h1>
+        <p>
+            <strong>About Indian Railways:</strong><br>
+            Indian Railways is one of the world's largest railway networks, transporting millions of passengers and tons of freight daily. It connects remote regions, supports economic growth, and is a vital part of India's infrastructure.
+        </p>
+        <h2>Top 100 Stations by Maximum Distance</h2>
+        <img src="{{ url_for('static', filename=graph1) }}" alt="Top 100 Stations by Maximum Distance">
+        <h2>Distribution of Train Distances</h2>
+        <img src="{{ url_for('static', filename=graph2) }}" alt="Distribution of Train Distances">
+        <h2>Top 20 Stations by Number of Trains</h2>
+        <img src="{{ url_for('static', filename=graph3) }}" alt="Top 20 Stations by Number of Trains">
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

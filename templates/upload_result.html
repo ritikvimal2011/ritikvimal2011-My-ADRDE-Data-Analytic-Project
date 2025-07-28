@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Data Visualization</title>
+    <style>
+        body { background: #f4f8fb; font-family: 'Segoe UI', Arial, sans-serif; }
+        .container { max-width: 900px; margin: 60px auto; background: #fff; padding: 32px 28px; border-radius: 12px; box-shadow: 0 6px 24px #0001; text-align: center; }
+        h2 { color: #27496d; margin-bottom: 24px; }
+        .btn { display: inline-block; margin: 10px 8px; padding: 10px 22px; background: #27496d; color: #fff; border: none; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+        .btn:hover { background: #142850; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ chart_type.capitalize() }} Plot: {{ y1_col }} &amp; {{ y2_col }} vs {{ x_col }}</h2>
+        {{ plot_html|safe }}
+        <div>
+            <a href="{{ url_for('upload') }}" class="btn">Try Another File</a>
+            <a href="/" class="btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

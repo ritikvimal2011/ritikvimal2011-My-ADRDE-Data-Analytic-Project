@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+      background-color: #eef2f7;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 24px #0001;
+    }
+    h2 {
+      color: #27496d;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    img {
+      border: 2px solid #d1d9e6;
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #27496d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #1f3c72;
+    }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h2>New COVID-19 Cases per Country (Sample)</h2>
+        <img src="{{ url_for('static', filename=graph1) }}" alt="Health Chart">
+        <h2>Cumulative Cases Over Time (Sample)</h2>
+        <img src="{{ url_for('static', filename=graph2) }}" alt="Cumulative Cases Line Chart">
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

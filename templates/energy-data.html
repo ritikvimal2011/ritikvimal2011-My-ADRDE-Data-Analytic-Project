@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Energy Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+      background-color: #eef2f7;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 6px 24px #0001; }
+
+    h2 {
+      color: #27496d;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    img {
+      border: 2px solid #d1d9e6;
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .desc {
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h2>Energy Capacity Distributions</h2>
+        <img src="{{ url_for('static', filename=graph1) }}" alt="Energy Pie Chart">
+        <div class="desc">
+            <p>
+                This pie chart shows the proportion of total installed energy capacity in India by source. It highlights how much each energy source (such as coal, diesel, nuclear, gas, lignite, hydro, and renewable energy) contributes to the overall energy mix. From the chart, it is clear that coal is the dominant source, followed by renewable energy and hydro power.
+            </p>
+        </div>
+        <h2>Total Capacity by Source</h2>
+        <img src="{{ url_for('static', filename=graph2) }}" alt="Energy Bar Chart">
+        <div class="desc">
+            <p>
+                This bar chart displays the absolute capacity (in megawatts) for each energy source. It allows for easy comparison of the actual installed capacity of each type. Coal has the highest installed capacity, while sources like lignite and gas have much smaller contributions.
+            </p>
+        </div>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
